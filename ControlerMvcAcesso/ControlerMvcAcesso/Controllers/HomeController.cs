@@ -15,7 +15,7 @@ namespace ControlerMvcAcesso.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Esse sistema tem como objetivo trazer mais segurança pra o ambiente escolar";
 
             return View();
         }
