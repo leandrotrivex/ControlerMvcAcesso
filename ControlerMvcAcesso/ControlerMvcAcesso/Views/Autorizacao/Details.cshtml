@@ -1,0 +1,66 @@
+﻿@model ControlerMvcAcesso.Models.TB_AUTORIZACAO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TB_AUTORIZACAO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOME_RESPONSAVEL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOME_RESPONSAVEL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RG_RESPONSAVEL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RG_RESPONSAVEL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HORA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HORA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOTIVO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOTIVO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TB_ALUNO.NOME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TB_ALUNO.NOME)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.COD_AUTORIZACAO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

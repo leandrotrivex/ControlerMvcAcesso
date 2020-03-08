@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ControlerMvcAcesso.Models.TB_AUTORIZACAO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NOME_RESPONSAVEL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RG_RESPONSAVEL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HORA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOTIVO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TB_ALUNO.NOME)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOME_RESPONSAVEL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RG_RESPONSAVEL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HORA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOTIVO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TB_ALUNO.NOME)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.COD_AUTORIZACAO }) |
+            @Html.ActionLink("Details", "Details", new { id=item.COD_AUTORIZACAO }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.COD_AUTORIZACAO })
+        </td>
+    </tr>
+}
+
+</table>

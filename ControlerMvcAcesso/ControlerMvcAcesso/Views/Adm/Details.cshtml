@@ -1,0 +1,66 @@
+﻿@model ControlerMvcAcesso.Models.TB_ADM_USUARIO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TB_ADM_USUARIO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOME_ADM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOME_ADM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SOBRENOME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SOBRENOME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SENHA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SENHA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PERFIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PERFIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ATIVO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ATIVO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.COD_ADM_USUARIO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
