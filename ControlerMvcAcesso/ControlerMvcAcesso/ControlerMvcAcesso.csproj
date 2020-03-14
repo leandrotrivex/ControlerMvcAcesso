@@ -129,48 +129,51 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AdmController.cs" />
-    <Compile Include="Controllers\ALUNOController.cs" />
+    <Compile Include="Controllers\AlunoController.cs" />
     <Compile Include="Controllers\AutorizacaoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ControleModel.Context.cs">
+    <Compile Include="Models\Model_Acesso_Aluno.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ControleModel.Context.tt</DependentUpon>
+      <DependentUpon>Model_Acesso_Aluno.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ControleModel.cs">
+    <Compile Include="Models\Model_Acesso_Aluno.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ControleModel.tt</DependentUpon>
+      <DependentUpon>Model_Acesso_Aluno.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ControleModel.Designer.cs">
+    <Compile Include="Models\Model_Acesso_Aluno.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ControleModel.edmx</DependentUpon>
+      <DependentUpon>Model_Acesso_Aluno.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\TB_ACESSO.cs">
-      <DependentUpon>ControleModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TB_ADM_USUARIO.cs">
-      <DependentUpon>ControleModel.tt</DependentUpon>
+      <DependentUpon>Model_Acesso_Aluno.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TB_ALUNO.cs">
-      <DependentUpon>ControleModel.tt</DependentUpon>
+      <DependentUpon>Model_Acesso_Aluno.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TB_ALUNO_TURMA.cs">
-      <DependentUpon>ControleModel.tt</DependentUpon>
+      <DependentUpon>Model_Acesso_Aluno.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TB_AUTORIZACAO.cs">
-      <DependentUpon>ControleModel.tt</DependentUpon>
+      <DependentUpon>Model_Acesso_Aluno.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TB_CARGO.cs">
+      <DependentUpon>Model_Acesso_Aluno.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TB_CURSO.cs">
-      <DependentUpon>ControleModel.tt</DependentUpon>
+      <DependentUpon>Model_Acesso_Aluno.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TB_TURMA.cs">
-      <DependentUpon>ControleModel.tt</DependentUpon>
+      <DependentUpon>Model_Acesso_Aluno.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TB_USUARIO.cs">
+      <DependentUpon>Model_Acesso_Aluno.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -183,24 +186,24 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\ControleModel.Context.tt">
+    <Content Include="Models\Model_Acesso_Aluno.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ControleModel.edmx</DependentUpon>
-      <LastGenOutput>ControleModel.Context.cs</LastGenOutput>
+      <DependentUpon>Model_Acesso_Aluno.edmx</DependentUpon>
+      <LastGenOutput>Model_Acesso_Aluno.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ControleModel.tt">
+    <Content Include="Models\Model_Acesso_Aluno.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ControleModel.edmx</DependentUpon>
-      <LastGenOutput>ControleModel.cs</LastGenOutput>
+      <DependentUpon>Model_Acesso_Aluno.edmx</DependentUpon>
+      <LastGenOutput>Model_Acesso_Aluno.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\ControleModel.edmx">
+    <EntityDeploy Include="Models\Model_Acesso_Aluno.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ControleModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model_Acesso_Aluno.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\ControleModel.edmx.diagram">
-      <DependentUpon>ControleModel.edmx</DependentUpon>
+    <Content Include="Models\Model_Acesso_Aluno.edmx.diagram">
+      <DependentUpon>Model_Acesso_Aluno.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -227,22 +230,21 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Adm\Create.cshtml" />
-    <Content Include="Views\Adm\Delete.cshtml" />
-    <Content Include="Views\Adm\Details.cshtml" />
-    <Content Include="Views\Adm\Edit.cshtml" />
-    <Content Include="Views\Adm\Index.cshtml" />
-    <Content Include="Views\ALUNO\Create.cshtml" />
-    <Content Include="Views\ALUNO\Delete.cshtml" />
-    <Content Include="Views\ALUNO\Details.cshtml" />
-    <Content Include="Views\ALUNO\Edit.cshtml" />
-    <Content Include="Views\ALUNO\Index.cshtml" />
-    <Content Include="Views\Adm\Login.cshtml" />
+    <Content Include="Views\Aluno\Create.cshtml" />
+    <Content Include="Views\Aluno\Delete.cshtml" />
+    <Content Include="Views\Aluno\Details.cshtml" />
+    <Content Include="Views\Aluno\Edit.cshtml" />
+    <Content Include="Views\Aluno\Index.cshtml" />
     <Content Include="Views\Autorizacao\Create.cshtml" />
     <Content Include="Views\Autorizacao\Delete.cshtml" />
     <Content Include="Views\Autorizacao\Details.cshtml" />
     <Content Include="Views\Autorizacao\Edit.cshtml" />
     <Content Include="Views\Autorizacao\Index.cshtml" />
+    <Content Include="Views\Usuario\Create.cshtml" />
+    <Content Include="Views\Usuario\Delete.cshtml" />
+    <Content Include="Views\Usuario\Details.cshtml" />
+    <Content Include="Views\Usuario\Edit.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

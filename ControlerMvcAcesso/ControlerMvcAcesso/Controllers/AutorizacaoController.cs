@@ -12,7 +12,7 @@ namespace ControlerMvcAcesso.Controllers
 {
     public class AutorizacaoController : Controller
     {
-        private DB_CONTROLE_ACESSO_ALUNOEntities db = new DB_CONTROLE_ACESSO_ALUNOEntities();
+        private DB_CONTROLEACESSOEntities db = new DB_CONTROLEACESSOEntities();
 
         // GET: Autorizacao
         public ActionResult Index()
@@ -48,7 +48,7 @@ namespace ControlerMvcAcesso.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "COD_AUTORIZACAO,NOME_RESPONSAVEL,RG_RESPONSAVEL,DATA,HORA,MOTIVO,COD_ALUNO")] TB_AUTORIZACAO tB_AUTORIZACAO)
+        public ActionResult Create([Bind(Include = "COD_AUTORIZACAO,NOME_RESPONSAVEL,RG,DATA,HORA,TIPO_AUTORIZACAO,VIGENCIA_INICIO,VIGENCIA_FIM,MOTIVO,COD_ALUNO")] TB_AUTORIZACAO tB_AUTORIZACAO)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace ControlerMvcAcesso.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "COD_AUTORIZACAO,NOME_RESPONSAVEL,RG_RESPONSAVEL,DATA,HORA,MOTIVO,COD_ALUNO")] TB_AUTORIZACAO tB_AUTORIZACAO)
+        public ActionResult Edit([Bind(Include = "COD_AUTORIZACAO,NOME_RESPONSAVEL,RG,DATA,HORA,TIPO_AUTORIZACAO,VIGENCIA_INICIO,VIGENCIA_FIM,MOTIVO,COD_ALUNO")] TB_AUTORIZACAO tB_AUTORIZACAO)
         {
             if (ModelState.IsValid)
             {

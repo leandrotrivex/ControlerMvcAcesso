@@ -11,6 +11,8 @@ namespace ControlerMvcAcesso.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     
     public partial class TB_ALUNO
     {
@@ -22,16 +24,19 @@ namespace ControlerMvcAcesso.Models
             this.TB_ALUNO_TURMA = new HashSet<TB_ALUNO_TURMA>();
         }
     
+        [Key]
         public int COD_ALUNO { get; set; }
+        [Required(ErrorMessage = "É Obrigatorio Informar o Nome do Aluno")]
         public string NOME { get; set; }
+        [Required(ErrorMessage = "É Obrigatorio Informar o RM do Aluno")]
         public string RM { get; set; }
-        public System.DateTime NACIMENTO { get; set; }
+        [Required(ErrorMessage = "É Obrigatorio Informar a Data de Nascimento do  Aluno")]
+        public System.DateTime DATA_NASCIENTO { get; set; }
+        [Required(ErrorMessage = "É Obrigatorio Informar o Genêro do Aluno")]
         public string SEXO { get; set; }
-        public Nullable<int> COD_ADM_USUARIO { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_ACESSO> TB_ACESSO { get; set; }
-        public virtual TB_ADM_USUARIO TB_ADM_USUARIO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_AUTORIZACAO> TB_AUTORIZACAO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

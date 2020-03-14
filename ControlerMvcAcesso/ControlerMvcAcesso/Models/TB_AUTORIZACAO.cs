@@ -18,15 +18,20 @@ namespace ControlerMvcAcesso.Models
     {
         [Key]
         public int COD_AUTORIZACAO { get; set; }
-        [Required(ErrorMessage = "Obrigatório Digitar o Nome do Responsável")]
+        [Required(ErrorMessage = "É Obrigatorio Informar o Nome do Responsável")]
         public string NOME_RESPONSAVEL { get; set; }
-        [Required(ErrorMessage = "Obrigatório Digitar o Rg do Responsável")]
-        public int RG_RESPONSAVEL { get; set; }
-        [Required(ErrorMessage = "*")]
+        [Required(ErrorMessage = "É Obrigatorio Informar o RG")]
+        public string RG { get; set; }
+        [Required(ErrorMessage = "É Obrigatorio Informar o Data")]
         public System.DateTime DATA { get; set; }
-        [Required(ErrorMessage = "*")]
+        [Required(ErrorMessage = "É Obrigatorio Informar o Hora")]
         public System.TimeSpan HORA { get; set; }
-        [Required(ErrorMessage = "Obrigatório Informar o Motivo")]
+        public string TIPO_AUTORIZACAO { get; set; }
+        [Required(ErrorMessage = "É Obrigatorio Informar Quando começa a valer a Autorização")]
+        public string VIGENCIA_INICIO { get; set; }
+        [Required(ErrorMessage = "É Obrigatorio Informar Quando termina a validade da Autorização")]
+        public string VIGENCIA_FIM { get; set; }
+        [Required(ErrorMessage = "É Obrigatorio Informar o Motivo da Autorização")]
         public string MOTIVO { get; set; }
         public Nullable<int> COD_ALUNO { get; set; }
     

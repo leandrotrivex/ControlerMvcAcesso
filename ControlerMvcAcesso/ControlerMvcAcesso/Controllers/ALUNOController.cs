@@ -10,18 +10,17 @@ using ControlerMvcAcesso.Models;
 
 namespace ControlerMvcAcesso.Controllers
 {
-    public class ALUNOController : Controller
+    public class AlunoController : Controller
     {
-        private DB_CONTROLE_ACESSO_ALUNOEntities db = new DB_CONTROLE_ACESSO_ALUNOEntities();
+        private DB_CONTROLEACESSOEntities db = new DB_CONTROLEACESSOEntities();
 
-        // GET: ALUNO
+        // GET: Aluno
         public ActionResult Index()
         {
-            var tB_ALUNO = db.TB_ALUNO.Include(t => t.TB_ADM_USUARIO);
-            return View(tB_ALUNO.ToList());
+            return View(db.TB_ALUNO.ToList());
         }
 
-        // GET: ALUNO/Details/5
+        // GET: Aluno/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,19 +35,18 @@ namespace ControlerMvcAcesso.Controllers
             return View(tB_ALUNO);
         }
 
-        // GET: ALUNO/Create
+        // GET: Aluno/Create
         public ActionResult Create()
         {
-            ViewBag.COD_ADM_USUARIO = new SelectList(db.TB_ADM_USUARIO, "COD_ADM_USUARIO", "NOME_ADM");
             return View();
         }
 
-        // POST: ALUNO/Create
+        // POST: Aluno/Create
         // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "COD_ALUNO,NOME,RM,NACIMENTO,SEXO,COD_ADM_USUARIO")] TB_ALUNO tB_ALUNO)
+        public ActionResult Create([Bind(Include = "COD_ALUNO,NOME,RM,DATA_NASCIENTO,SEXO")] TB_ALUNO tB_ALUNO)
         {
             if (ModelState.IsValid)
             {
@@ -57,11 +55,10 @@ namespace ControlerMvcAcesso.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.COD_ADM_USUARIO = new SelectList(db.TB_ADM_USUARIO, "COD_ADM_USUARIO", "NOME_ADM", tB_ALUNO.COD_ADM_USUARIO);
             return View(tB_ALUNO);
         }
 
-        // GET: ALUNO/Edit/5
+        // GET: Aluno/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,16 +70,15 @@ namespace ControlerMvcAcesso.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.COD_ADM_USUARIO = new SelectList(db.TB_ADM_USUARIO, "COD_ADM_USUARIO", "NOME_ADM", tB_ALUNO.COD_ADM_USUARIO);
             return View(tB_ALUNO);
         }
 
-        // POST: ALUNO/Edit/5
+        // POST: Aluno/Edit/5
         // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "COD_ALUNO,NOME,RM,NACIMENTO,SEXO,COD_ADM_USUARIO")] TB_ALUNO tB_ALUNO)
+        public ActionResult Edit([Bind(Include = "COD_ALUNO,NOME,RM,DATA_NASCIENTO,SEXO")] TB_ALUNO tB_ALUNO)
         {
             if (ModelState.IsValid)
             {
@@ -90,11 +86,10 @@ namespace ControlerMvcAcesso.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.COD_ADM_USUARIO = new SelectList(db.TB_ADM_USUARIO, "COD_ADM_USUARIO", "NOME_ADM", tB_ALUNO.COD_ADM_USUARIO);
             return View(tB_ALUNO);
         }
 
-        // GET: ALUNO/Delete/5
+        // GET: Aluno/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -109,7 +104,7 @@ namespace ControlerMvcAcesso.Controllers
             return View(tB_ALUNO);
         }
 
-        // POST: ALUNO/Delete/5
+        // POST: Aluno/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

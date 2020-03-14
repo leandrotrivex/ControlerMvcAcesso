@@ -15,9 +15,9 @@ namespace ControlerMvcAcesso.Models
     public partial class TB_ACESSO
     {
         public int COD_ACESSO { get; set; }
-        public System.DateTime DATA { get; set; }
-        public Nullable<System.TimeSpan> HORA_ENTRADA { get; set; }
-        public Nullable<System.TimeSpan> HORA_SAIDA { get; set; }
+        public string DATA { get; set; }
+        public System.TimeSpan HORA_ENTRADA { get; set; }
+        public System.TimeSpan HORA_SAIDA { get; set; }
         public Nullable<int> COD_ALUNO { get; set; }
     
         public virtual TB_ALUNO TB_ALUNO { get; set; }
